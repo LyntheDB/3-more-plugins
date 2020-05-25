@@ -1,0 +1,181 @@
+/*  reset sheet */
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+.clear{
+    clear: both;
+
+}
+
+/* typo */
+
+body{
+/* alles wat ik niet specifiek aanwijs is nu roboto font*/
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+
+}
+h1, h2, h3, h4{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 0,5em;
+}
+
+h1{
+    font-size: 3em;
+    
+   
+}
+
+h2{
+    font-size: 2em;
+}
+
+p{
+    margin-bottom: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    /*inherit betekent erven, erft automatisch de kleur van element*/
+}
+
+#cta{
+    display: inline-block;
+    background: green;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    color: white;
+    transition: 2000ms ease all;
+}
+
+/*grid*/
+
+.grid-wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* main */
+
+header{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+header{
+    background-color: red;
+    /* background: url(https://images.unsplash.com/photo-1588097237448-45f7aadebae1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.header-ui{
+    display: block;
+    position: absolute;
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+#header-next{
+    right: 5%;
+}
+
+#header-prev{
+    left: 5%;
+}
+
+
+
+nav{
+    height: 100px;
+    width: 100vw;
+    background: wheat;
+}
+
+nav ul{
+
+    float: right;
+}
+
+nav ul li{
+    float: left;
+    margin: 0 40px;
+    line-height: 100px;
+    /*line height is normaal bedoeld om regel afstanden te creeren bij typo, kun je ook misbruiken door te zeggen dat regelafstand van navi elementen evengroot is al naviblok, hij staat dus visueel gezien wel int midden*/
+}
+
+/*thumbs*/
+
+.thumb{
+    display: block;
+    width: calc((1080px / 3 - 40px));
+    /* width: calc((100% - 40px) / 3); */
+    float: left;
+    background: red;
+    margin: 0 20px 40px 20px;
+    
+}
+
+.thumb:after{
+        content:"";
+        display: block;
+        padding-bottom: 100%;
+}
+
+.thumb:nth-child(3n-2){
+    /* hierboven staat eigk; om de 3 ga dn 2 terug en maak die blauw */
+    background: blue;
+    margin-left: 0;
+
+}
+
+.thumb:nth-child(3n){
+    margin-right: 0;
+
+}
+
+
+@media only screen and (max-width: 1080px) {
+  .grid-wrap{
+      padding: 0 10px;
+  }
+    
+  }
+
+  @media only screen and (max-width:800px) {
+.thumb{
+
+    width: calc((100% -80px) / 2);
+    
+}
+.thumb:nth-child(3n-2){
+    
+    margin-left: 20px;
+
+}
+
+.thumb:nth-child(3n){
+    margin-right: 20px;
+
+}
+.thumb:nth-child(2n-1){
+    
+    margin-left: 0;
+
+}
+.thumb:nth-child(2n){
+    
+    margin-right: 0;
+
+}
+      
+    }
