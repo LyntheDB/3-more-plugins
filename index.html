@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li> <a href="#">Nav 1</a>  </li>
+            <li> <a href="#">Nav 2</a>  </li>
+            <li> <a href="#">Nav 3</a>  </li>
+        </ul>
+        <div class="clear"></div>
+    </nav>
+
+
+<main>
+
+    <header>
+        <div class=grid-wrap> 
+            <h1>Onze eerste JavaScript website</h1>
+        </div>
+
+        <a id="header-prev" class="header-ui" href="#"></a>
+        <a id="header-next" class="header-ui" href="#"></a>
+    </header>
+
+    <article>
+        <div class=grid-wrap>
+            <h2>Article Title</h2>
+            <a href="#" id="cta">CTA</a>
+
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At facere corrupti molestiae possimus animi reprehenderit optio, ullam praesentium quidem deleniti enim, quis atque porro? Voluptate expedita facilis culpa nesciunt at.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At facere corrupti molestiae possimus animi reprehenderit optio, ullam praesentium quidem deleniti enim, quis atque porro? Voluptate expedita facilis culpa nesciunt at.</p>
+            <div id="accordion">
+                <h3>Section 1</h3>
+                <div>
+                  <p>
+                  Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                  ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                  amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                  odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                  </p>
+                </div>
+                <h3>Section 2</h3>
+                <div>
+                  <p>
+                  Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                  purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                  velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                  suscipit faucibus urna.
+                  </p>
+                </div>
+                <h3>Section 3</h3>
+                <div>
+                  <p>
+                  Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                  Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                  ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                  lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                  </p>
+                  <ul>
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                  </ul>
+                </div>
+                <h3>Section 4</h3>
+                <div>
+                  <p>
+                  Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                  et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                  faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                  mauris vel est.
+                  </p>
+                  <p>
+                  Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                  inceptos himenaeos.
+                  </p>
+                </div>
+              </div>
+               
+
+
+            <div id="thumb-wrap">
+                <a href="#" class="thumb">1</a>
+                <a href="#" class="thumb">2</a>
+                <a href="#" class="thumb">3</a>
+                <a href="#" class="thumb">4</a>
+                <a href="#" class="thumb">5</a>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+
+
+    </article>
+
+
+
+</main>
+<!-- plaats scripts voor het sluiten van de body -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/js/jquery.backstretch.min.js"></script>
+<script>
+// hoe voeg je een plugin toe
+// 1. plugin toevoegen zoals hierboven de links met script src
+// 2. syntax?
+// 3. plugin init
+
+$('header').backstretch([
+    "https://images.unsplash.com/photo-1588097237448-45f7aadebae1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    "https://images.unsplash.com/photo-1586809755167-e4c599fbd335?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "https://images.unsplash.com/photo-1585758918599-6a03f6b9ae08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+], {duration: 3000, fade: 750});
+
+$('#header-next').click( function() {
+    $('header').backstretch("prev");
+});
+
+$('#header-prev').click( function() {
+    $('header').backstretch("next");
+});
+
+$( "#accordion" ).accordion();
+    // jqeury API doc link https://api.jquery.com/ zoeken is command en F
+
+    // 1. selector (dat is dus $('cta of een ander id/naam') > met jqeury spreek je die aan met $ gevolgd door ("") bij dat andere is dat met getelementbyId
+    // 2. functie (dat is dus .css)
+    // 3. opties (dus ("color", "red") )
+    
+
+
+
+    
+
+
+
+</script>
+
+</body>
+
+</html>
